@@ -1,0 +1,25 @@
+
+{% extends 'HowToAdult/base.html' %}
+{% load static %}
+{% block content %}
+<div class='d-inline-flex flex-wrap justify-content-center p-3 m-3 border'>
+    <table class='table'>
+        <thead>
+            <tr>
+                <th scope='col'>id</th><th scope='col'>provider</th><th scope='col'>product</th><th scope='col'>is_recurring</th><th scope='col'>start_date</th><th scope='col'>end_date</th><th scope='col'>category</th><th scope='col'>user</th>
+                <th scope='col'></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for object in all_objects %}
+            <tr>
+                <td>{{object.id}}</td><td>{{object.provider}}</td><td>{{object.product}}</td><td>{{object.is_recurring}}</td><td>{{object.start_date}}</td><td>{{object.end_date}}</td><td>{{object.category}}</td><td>{{object.user}}</td>
+                <td><a href="{% url 'update_Policy' object.id %}" class='btn btn-outline-success'><i class='fas fa-pen'></i></a></td>
+                <td><a href="{% url 'delete_Policy' object.id %}" class='btn btn-outline-danger'><i class='fas fa-trash-alt'></i></a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
+

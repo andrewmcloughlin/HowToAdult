@@ -1,0 +1,22 @@
+
+{% extends 'HowToAdult/base.html' %}
+{% load static %}
+{% block content %}
+<div class='d-inline-flex flex-wrap justify-content-center p-3 m-3 border'>
+    <table class='table'>
+        <thead>
+            <tr>
+                images_go_here
+            </tr>
+        </thead>
+        <tbody>
+            {% for object in all_objects %}
+            <tr>
+                table_content
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
+
